@@ -1,10 +1,20 @@
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+@font-face {
+    font-family: 'Star Jedi';
+    src: url('fonts/Starjedi.ttf') format('truetype');
+}
+
 body {
-    background: black;
+    font-family: 'Star Jedi';
+    background: url('https://st2.depositphotos.com/40002268/42836/i/450/depositphotos_428366430-stock-photo-abstract-neon-glowing-dynamic-light.jpg') no-repeat center center fixed;
+    background-size: cover;
     color: orange;
-  }
+}
+
   
-  .cardWrapper {
-    width: 100%; /* Esto limitará el ancho del contenedor a un porcentaje de la pantalla */
+.cardWrapper {
+    width: 100%; 
     margin: 1.25rem auto;
     padding: 1.25rem;
     background-color: black;
@@ -12,14 +22,15 @@ body {
     border-radius: 0.625rem;
     box-shadow: 0 0 0.9375rem rgba(255, 165, 0, 0.7);
     position: relative;
-    overflow-x: auto; /* Esto permite el desplazamiento horizontal */
-    display: flex; /* Alineamos las cards horizontalmente */
-    gap: 1rem; /* Espacio entre las cards */
-    scroll-snap-type: x mandatory; /* Permite el desplazamiento suave entre cards */
+    overflow-x: auto; 
+    display: flex; 
+    gap: 1rem;
+    scroll-snap-type: x mandatory;
+    box-sizing: border-box; 
 }
 
 .cardWrapper::-webkit-scrollbar {
-    height: 10px; /* Ancho del scrollbar horizontal */
+    height: 12px;
 }
 
 .cardWrapper::-webkit-scrollbar-thumb {
@@ -27,9 +38,13 @@ body {
     border-radius: 10px;
 }
 
+.cardWrapper::-webkit-scrollbar-track {
+    background-color: transparent; /* Esto elimina el fondo del track */
+}
+
 .card {
-    width: 22rem; /* Ancho de las tarjetas, puedes hacerlo más grande si deseas */
-    flex-shrink: 0; /* Evita que las tarjetas se encojan */
+    width: 22rem;
+    flex-shrink: 0;
     background-color: black;
     color: white;
     border-radius: 0.5rem;
@@ -38,7 +53,9 @@ body {
     position: relative;
     display: flex;
     flex-direction: column;
-    scroll-snap-align: start; /* Asegura que cada card se alinee cuando se hace scroll */
+    scroll-snap-align: start;
+    overflow: hidden; /* Aseguramos que el contenido no sobresalga de las esquinas */
+    margin-left: 1rem; 
 }
 
 .card img {
@@ -46,6 +63,7 @@ body {
     height: 12.5rem;
     object-fit: cover;
     border-bottom: 0.125rem solid orange;
+    border-radius: 0.5rem 0.5rem 0 0; /* Redondeamos las esquinas superiores de la imagen */
 }
 
 .card-body {
@@ -89,9 +107,49 @@ body {
     color: orange;
     padding: 0.625rem 0;
     text-align: center;
-    font-family: 'Star Jedi', sans-serif;
     border-bottom: 0.1875rem solid orange;
     box-shadow: 0 2px 10px rgba(255, 165, 0, 0.6);
+}
+.navbar .dropdown-menu {
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+/* Fondo negro y texto naranja en el dropdown */
+.navbar .dropdown-menu {
+    background-color: black; /* Fondo negro */
+    border: 1px solid orange; /* Borde naranja */
+    color: orange; /* Texto naranja */
+}
+
+.navbar .dropdown-item {
+    color: orange; /* Asegura que el texto dentro del dropdown también sea naranja */
+}
+
+.navbar .dropdown-item:hover {
+    background-color: #333; /* Color de fondo oscuro cuando se pasa el mouse */
+    color: orange; /* Texto naranja al hacer hover */
+}
+
+/* Cambiar el color del icono del corazón a naranja */
+.navbar .dropdown-toggle {
+    color: orange; /* Icono de corazón naranja */
+}
+
+.navbar .dropdown-toggle:hover {
+    color: yellow; /* Icono de corazón amarillo al hacer hover */
+}
+
+/* Asegurarnos de que el botón de favoritos tenga fondo negro */
+.navbar .dropdown-toggle {
+    background-color: black; /* Fondo negro */
+    border: none; /* Sin borde */
+    color: orange; /* Texto naranja */
+}
+
+/* Estilos para el icono dentro del botón */
+.navbar .dropdown-toggle svg {
+    color: orange; /* Asegura que el icono de corazón sea naranja */
 }
 
 .btn {
@@ -99,26 +157,25 @@ body {
 }
 
 .btn:hover {
-    color: white;
+    color: darkorange;
 }
 
-/* Nuevo estilo para el botón de corazón */
-.card-body .heart-btn {
+.heart-btn {
     position: absolute;
     top: 10px;
     right: 10px;
     background: transparent;
     border: none;
-    color: white;
-    font-size: 2rem;
+    color: orange; /* El icono de corazón será naranja */
+    font-size: 2rem; /* Ajustamos el tamaño del ícono */
     cursor: pointer;
     transition: color 0.3s ease;
 }
 
-.card-body .heart-btn.favorito {
-    color: red; /* Cuando está marcado como favorito */
+.heart-btn.favorito {
+    color: red; /* Si está marcado como favorito, se pone rojo */
 }
 
-.card-body .heart-btn:hover {
+.heart-btn:hover {
     transform: scale(1.1);
 }
