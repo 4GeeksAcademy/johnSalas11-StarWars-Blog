@@ -30,6 +30,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.then(respJson => {
 						const people = respJson.results;
 						setStore({ people: people })
+						console.log("people", people)
 					})
 			},
 			GetPlanets: () => {
@@ -38,6 +39,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.then(respuestaJson => {
 						const planets = respuestaJson.results;
 						setStore({ planets: planets })
+						console.log("planets", planets)
 					})
 			},
 			GetStarships: () => {
@@ -46,6 +48,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.then(respuestaJson => {
 						const starships = respuestaJson.results;
 						setStore({ starships: starships })
+						console.log("starships", starships)
 					})
 			},
 			toggleFavorite: (uid, name, type) => {
