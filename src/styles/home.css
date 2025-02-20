@@ -1,0 +1,124 @@
+body {
+    background: black;
+    color: orange;
+  }
+  
+  .cardWrapper {
+    width: 100%; /* Esto limitará el ancho del contenedor a un porcentaje de la pantalla */
+    margin: 1.25rem auto;
+    padding: 1.25rem;
+    background-color: black;
+    border: 0.1875rem solid orange;
+    border-radius: 0.625rem;
+    box-shadow: 0 0 0.9375rem rgba(255, 165, 0, 0.7);
+    position: relative;
+    overflow-x: auto; /* Esto permite el desplazamiento horizontal */
+    display: flex; /* Alineamos las cards horizontalmente */
+    gap: 1rem; /* Espacio entre las cards */
+    scroll-snap-type: x mandatory; /* Permite el desplazamiento suave entre cards */
+}
+
+.cardWrapper::-webkit-scrollbar {
+    height: 10px; /* Ancho del scrollbar horizontal */
+}
+
+.cardWrapper::-webkit-scrollbar-thumb {
+    background-color: orange;
+    border-radius: 10px;
+}
+
+.card {
+    width: 22rem; /* Ancho de las tarjetas, puedes hacerlo más grande si deseas */
+    flex-shrink: 0; /* Evita que las tarjetas se encojan */
+    background-color: black;
+    color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 0.625rem rgba(255, 165, 0, 0.8);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    scroll-snap-align: start; /* Asegura que cada card se alinee cuando se hace scroll */
+}
+
+.card img {
+    width: 100%;
+    height: 12.5rem;
+    object-fit: cover;
+    border-bottom: 0.125rem solid orange;
+}
+
+.card-body {
+    padding: 0.625rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 11.25rem;
+    overflow: hidden;
+}
+
+.card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.card .btn {
+    background-color: orange;
+    color: white;
+    border: none;
+    padding: 0.625rem;
+    font-size: 1rem;
+    text-transform: uppercase;
+    border-radius: 0.3125rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 0.625rem;
+    width: 100%;
+}
+
+.card .btn:hover {
+    background-color: yellow;
+    transform: scale(1.05);
+}
+
+.navbar {
+    background-color: black;
+    color: orange;
+    padding: 0.625rem 0;
+    text-align: center;
+    font-family: 'Star Jedi', sans-serif;
+    border-bottom: 0.1875rem solid orange;
+    box-shadow: 0 2px 10px rgba(255, 165, 0, 0.6);
+}
+
+.btn {
+    color: orange;
+}
+
+.btn:hover {
+    color: white;
+}
+
+/* Nuevo estilo para el botón de corazón */
+.card-body .heart-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.card-body .heart-btn.favorito {
+    color: red; /* Cuando está marcado como favorito */
+}
+
+.card-body .heart-btn:hover {
+    transform: scale(1.1);
+}
