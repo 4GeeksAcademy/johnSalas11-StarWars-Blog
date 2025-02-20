@@ -12,7 +12,6 @@ body {
     color: orange;
 }
 
-  
 .cardWrapper {
     width: 100%; 
     margin: 1.25rem auto;
@@ -39,7 +38,7 @@ body {
 }
 
 .cardWrapper::-webkit-scrollbar-track {
-    background-color: transparent; /* Esto elimina el fondo del track */
+    background-color: transparent;
 }
 
 .card {
@@ -54,7 +53,7 @@ body {
     display: flex;
     flex-direction: column;
     scroll-snap-align: start;
-    overflow: hidden; /* Aseguramos que el contenido no sobresalga de las esquinas */
+    overflow: hidden;
     margin-left: 1rem; 
 }
 
@@ -63,7 +62,7 @@ body {
     height: 12.5rem;
     object-fit: cover;
     border-bottom: 0.125rem solid orange;
-    border-radius: 0.5rem 0.5rem 0 0; /* Redondeamos las esquinas superiores de la imagen */
+    border-radius: 0.5rem 0.5rem 0 0;
 }
 
 .card-body {
@@ -110,46 +109,43 @@ body {
     border-bottom: 0.1875rem solid orange;
     box-shadow: 0 2px 10px rgba(255, 165, 0, 0.6);
 }
+
 .navbar .dropdown-menu {
     max-height: 200px;
     overflow-y: auto;
 }
 
-/* Fondo negro y texto naranja en el dropdown */
 .navbar .dropdown-menu {
-    background-color: black; /* Fondo negro */
-    border: 1px solid orange; /* Borde naranja */
-    color: orange; /* Texto naranja */
+    background-color: black;
+    border: 1px solid orange;
+    color: orange;
 }
 
 .navbar .dropdown-item {
-    color: orange; /* Asegura que el texto dentro del dropdown también sea naranja */
+    color: orange;
 }
 
 .navbar .dropdown-item:hover {
-    background-color: #333; /* Color de fondo oscuro cuando se pasa el mouse */
-    color: orange; /* Texto naranja al hacer hover */
+    background-color: #333;
+    color: orange;
 }
 
-/* Cambiar el color del icono del corazón a naranja */
 .navbar .dropdown-toggle {
-    color: orange; /* Icono de corazón naranja */
+    color: orange;
 }
 
 .navbar .dropdown-toggle:hover {
-    color: yellow; /* Icono de corazón amarillo al hacer hover */
+    color: yellow;
 }
 
-/* Asegurarnos de que el botón de favoritos tenga fondo negro */
 .navbar .dropdown-toggle {
-    background-color: black; /* Fondo negro */
-    border: none; /* Sin borde */
-    color: orange; /* Texto naranja */
+    background-color: black;
+    border: none;
+    color: orange;
 }
 
-/* Estilos para el icono dentro del botón */
 .navbar .dropdown-toggle svg {
-    color: orange; /* Asegura que el icono de corazón sea naranja */
+    color: orange;
 }
 
 .btn {
@@ -166,14 +162,14 @@ body {
     right: 10px;
     background: transparent;
     border: none;
-    color: orange; /* El icono de corazón será naranja */
-    font-size: 2rem; /* Ajustamos el tamaño del ícono */
+    color: orange;
+    font-size: 2rem;
     cursor: pointer;
     transition: color 0.3s ease;
 }
 
 .heart-btn.favorito {
-    color: red; /* Si está marcado como favorito, se pone rojo */
+    color: red;
 }
 
 .heart-btn:hover {

@@ -6,7 +6,7 @@ import { FaHeart } from 'react-icons/fa';
 const Vehicles = ({ uid, name, imageUrl }) => {
   const { store, actions } = useContext(Context);
   
-  const isFavorite = store.favorites.some(fav => fav.uid === uid && fav.type === "Vehicles");
+  const isFavorite = store.favorites.some(fav => fav.uid === uid && fav.type === "vehicles");
 
   return (
     <div className="card p-1">
@@ -16,7 +16,7 @@ const Vehicles = ({ uid, name, imageUrl }) => {
         <Link to={`/Vehicles/${uid}`} className="btn btn-primary">Learn</Link>
         <button
           className={`heart-btn ${isFavorite ? "favorito" : ""} ${isFavorite ? "btn-danger" : "btn-outline-danger"}`}
-          onClick={() => actions.toggleFavorite(uid, name, "character")}
+          onClick={() => actions.toggleFavorite(uid, name, "vehicles")}
         >
           <FaHeart />
         </button>

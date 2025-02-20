@@ -49,12 +49,12 @@ export const Home = () => {
 
 	useEffect(() => {
 		actions.GetPeople(),
-			actions.GetPlanets(),
-			actions.GetStarships()
+		actions.GetPlanets(),
+		actions.GetStarships()
 	}, [])
 
 	return (
-		<div className="m-2">
+		<div className="m-3">
 			<h5>Characters:</h5>
 			<div className="cardWrapper text-center">
 				{

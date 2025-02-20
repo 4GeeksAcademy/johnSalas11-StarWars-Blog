@@ -9,21 +9,21 @@ export const Navbar = () => {
   const { store, actions } = useContext(Context);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
-  // Función para alternar el estado del dropdown
+  
   const toggleDropdown = () => setIsDropdownOpen(!isDropdownOpen);
 
   return (
     <nav className="navbar mb-3">
       <Link to="/">
-        <h1 className="navbar-brand mb-0 h1 btn">StarWars</h1>
+        <h1 className="navbar-brand ms-3 h1 btn">StarWars</h1>
       </Link>
 
       <DropdownButton
         id="dropdown-favorites"
-        title={<FaHeart />} // Icono de corazón
+        title={<FaHeart />} 
         show={isDropdownOpen}
         onClick={toggleDropdown}
-        className="ms-auto me-2" // Alinearlo a la derecha
+        className="ms-auto me-2" 
       >
         {store.favorites.length > 0 ? (
           store.favorites.map(fav => (
@@ -34,7 +34,7 @@ export const Navbar = () => {
             </Dropdown.Item>
           ))
         ) : (
-          <Dropdown.Item disabled>No hay favoritos</Dropdown.Item>
+          <Dropdown.Item disabled>No favorites</Dropdown.Item>
         )}
       </DropdownButton>
     </nav>
