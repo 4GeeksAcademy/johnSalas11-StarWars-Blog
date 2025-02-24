@@ -9,7 +9,7 @@ body {
     font-family: 'Star Jedi', sans-serif;
     background: url('https://st2.depositphotos.com/40002268/42836/i/450/depositphotos_428366430-stock-photo-abstract-neon-glowing-dynamic-light.jpg') no-repeat center center fixed;
     background-size: cover;
-    color: orange;
+    color: white;
 }
 
 .cardWrapper {
@@ -17,9 +17,9 @@ body {
     margin: 1.25rem auto;
     padding: 1.25rem;
     background-color: black;
-    border: 0.1875rem solid orange;
+    border: 0.1875rem solid white;
     border-radius: 0.625rem;
-    box-shadow: 0 0 0.9375rem rgba(255, 165, 0, 0.7);
+    box-shadow: 0 0 0.9375rem rgba(255, 255, 255, 0.7);
     position: relative;
     overflow-x: auto; 
     display: flex; 
@@ -33,7 +33,7 @@ body {
 }
 
 .cardWrapper::-webkit-scrollbar-thumb {
-    background-color: orange;
+    background-color: white;
     border-radius: 10px;
 }
 
@@ -47,8 +47,8 @@ body {
     background-color: black;
     color: white;
     border-radius: 0.5rem;
-    box-shadow: 0 0 0.625rem rgba(255, 165, 0, 0.8);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 0.625rem rgba(255, 255, 255, 0.8);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, scale 0.3s ease;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -61,7 +61,7 @@ body {
     width: 100%;
     height: 12.5rem;
     object-fit: cover;
-    border-bottom: 0.125rem solid orange;
+    border-bottom: 0.125rem solid white;
     border-radius: 0.5rem 0.5rem 0 0;
 }
 
@@ -84,8 +84,8 @@ body {
 }
 
 .card .btn {
-    background-color: orange;
-    color: white;
+    background-color: white;
+    color: black;
     border: none;
     padding: 0.625rem;
     font-size: 1rem;
@@ -96,18 +96,19 @@ body {
     width: 100%;
 }
 
-.card .btn:hover {
-    background-color: yellow;
+
+.card:hover {
     transform: scale(1.05);
+    box-shadow: 0 0 1rem rgba(255, 255, 255, 1);
 }
 
 .navbar {
     background-color: black;
-    color: orange;
+    color: white;
     padding: 0.625rem 0;
     text-align: center;
-    border-bottom: 0.1875rem solid orange;
-    box-shadow: 0 2px 10px rgba(255, 165, 0, 0.6);
+    border-bottom: 0.1875rem solid white;
+    box-shadow: 0 2px 10px rgba(255, 255, 255, 0.6);
 }
 
 .navbar .dropdown-menu {
@@ -117,16 +118,16 @@ body {
 
 .navbar .dropdown-menu {
     background-color: black;
-    border: 1px solid orange;
-    color: orange;
+    border: 1px solid white;
+    color: white;
 }
 
 .navbar .dropdown-item {
-    color: orange;
+    color: white;
 }
 
 .navbar .dropdown-item a {
-    color: orange; 
+    color: white; 
     text-decoration: underline;  
 }
 
@@ -137,11 +138,11 @@ body {
 
 .navbar .dropdown-item:hover {
     background-color: #333;
-    color: orange;
+    color: white;
 }
 
 .navbar .dropdown-toggle {
-    color: orange;
+    color: white;
 }
 
 .navbar .dropdown-toggle:hover {
@@ -151,20 +152,17 @@ body {
 .navbar .dropdown-toggle {
     background-color: black;
     border: none;
-    color: orange;
+    color: white;
 }
 
 .navbar .dropdown-toggle svg {
-    color: orange;
+    color: white;
 }
 
 .btn {
-    color: orange;
+    color: white;
 }
 
-.btn:hover {
-    color: darkorange;
-}
 
 .heart-btn {
     position: absolute;
@@ -172,10 +170,10 @@ body {
     right: 10px;
     background: transparent;
     border: none;
-    color: orange;
+    color: white;
     font-size: 2rem;
     cursor: pointer;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .heart-btn.favorito {
@@ -183,5 +181,65 @@ body {
 }
 
 .heart-btn:hover {
-    transform: scale(1.1);
+    transform: scale(1.2);
+    color: red;
+}
+
+.detail-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    color: white;
+    padding: 1.25rem;
+    border-radius: 0.625rem;
+    box-shadow: 0 0 0.9375rem rgba(255, 255, 255, 0.7);
+    margin-top: 1.25rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.detail-container:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 1.25rem rgba(255, 255, 255, 1);
+}
+
+.detail-container .image-container {
+    width: 40%;
+}
+
+.detail-container .image-container img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    border-bottom: 0.125rem solid white;
+}
+
+.detail-container .info-container {
+    width: 55%;
+    padding-left: 1.25rem;
+}
+
+.detail-container .info-container .card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.detail-container .info-container .card-text {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.detail-container .info-container .btn {
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 0.625rem;
+    font-size: 1rem;
+    text-transform: uppercase;
+    border-radius: 0.3125rem;
+    margin-top: 1rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
